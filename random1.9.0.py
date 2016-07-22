@@ -168,6 +168,7 @@ while (play=="yes"):
 #Higher or lower
         if(chooseGame == "N"):
             gamemode = input ("Choose a gamemode: Infinite(I) or Challenge (C) or Multiplayer (M).")
+            gamemode = gamemode.upper()
         while (gamemode =="I"):
             dif = int(input("What difficuly would you like to play on (1-10)?"))
             maximum= pow(10,dif)
@@ -205,6 +206,7 @@ while (play=="yes"):
                         print('you lost. the number was',a,". Score and leaderboards under construction")
                         a = -1
                         gamemode = "nothing"
+                        chooseGame = "nothing"
                     elif(b>a):
                         print("The number is lower")
                         count2 = count2 - 1
@@ -240,13 +242,3 @@ while (play=="yes"):
             print("You won in", count3, "tries.Score and leaderboards under construction")
             gamemode = "nothing"
             chooseGame = "nothing"
-            
-
- 
-            
-    
-
-    
-    
-      
-
