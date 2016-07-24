@@ -1,3 +1,5 @@
+
+
 import random
 import math
 gamemode = "nothing"
@@ -127,6 +129,7 @@ while (play=="yes"):
                                     print ("Thanks for playing!")
                                     chooseGame = "nothing"
                                     game = True
+                                    game2 = False
                             elif finish_game == "Y":
                                     game = True
                                     print ("So, let's play again... Guess the secret code: ")
@@ -168,6 +171,7 @@ while (play=="yes"):
                 question1= input("Do you accept or decline the offer from the bank? (a/d) ")
                 while(question1 != "a" and question1 != "d"):
                     question1= input("USER ERROR: Do you accept or decline the offer from the bank? (a/d) ")
+                    question1 =input("")
                 if(question1 == "a"):
                     print("Congratulations, you won $",offer1,"!")
                     start = "nothing"
@@ -186,6 +190,7 @@ while (play=="yes"):
                     question2= input("Do you accept or decline the offer from the bank? (a/d) ")
                     while(question2 != "a" and question2 != "d"):
                         question1= input("USER ERROR: Do you accept or decline the offer from the bank? (a/d) ")
+                        question2 = input("")
                     if(question2 == "a"):
                         print("Congratulations, you won $",offer1,"!")
                         start = "nothing"
@@ -228,7 +233,7 @@ while (play=="yes"):
                 elif(b<a):
                     print("The number is higher")
                     count = count + 1
-            print("You won in", count, "tries.Score and leaderboards under construction")
+            print("You won in", count + 1, "tries.Score and leaderboards under construction")
             gamemode = "nothing"
             chooseGame = "nothing"
         while (gamemode == "C"):
@@ -287,3 +292,4 @@ while (play=="yes"):
             print("You won in", count3, "tries.Score and leaderboards under construction")
             gamemode = "nothing"
             chooseGame = "nothing"
+            
