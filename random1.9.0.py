@@ -11,11 +11,56 @@ while (play=="yes"):
         play = input("Do you want to play (yes/no)?")
         if(play == "no"):
             break
-        chooseGame = input("What game do you want to play. Mastermind(MA), Deal or no Deal (D), or Higher/Lower(N)?")
+        chooseGame = input("What game do you want to play.\nMastermind(MA)\nRandom Number Generator(R)\nDeal or no Deal (D)\nHigher/Lower(N)?\n")
         chooseGame = chooseGame.upper()
-        while(chooseGame != "MA" and chooseGame != "D" and chooseGame != "N"):
-            chooseGame = input("That's not a choice pick again. Mastermind(MA), Deal or no deal (D), Higher/Lower(N).")
+        while(chooseGame != "MA" and chooseGame != "D" and chooseGame != "N" and chooseGame != "R"):
+            chooseGame = input("That's not a choice pick again.\nMastermind(MA)\nRandom Number Generator(R)\nDeal or no deal (D)\nHigher/Lower(N)\n")
             chooseGame = chooseGame.upper()
+#random number 
+        if(chooseGame == "R"):
+        	sim = input("Flip a coin(F)\nRandom number(R)\nDice(D)\n")
+        	sim = sim.upper()
+        	while(sim != "F" and sim != "R" and sim != "D"):
+        		sim = input("Sorry that is not a choice. Pick again.\nFlip a coin(F)\n Random number(R)\n Dice(D)\n")
+        		sim = sim.upper()
+        	if(sim == "F"):
+        		agian = "Y"
+        		while(agian == "Y"):
+        			coin = random.randrange(0,2)
+        			if(coin == 1):
+        				print("heads")
+        				agian = input("agian (y/n)")
+        				agian = agian.upper()
+        			elif(coin == 0):
+	        			print("tails")
+        				agian = input("agian (y/n)")
+        				agian = agian.upper()
+        			if(agian == "N"):
+        				chooseGame = "nothing"
+        				sim = "nothing"
+        	while(sim == "R"):
+        		first = int(input("Pick your start number"))
+        		second = int(input("pick your end number"))
+        		while(first >= second):
+        			second = int(input("error: second number must be bigger\n re-enter please"))
+        		randnumber = random.randrange(first,second)
+        		print("your random number is", randnumber)
+        		repeat = input("again?(y/n)")
+        		repeat = repeat.upper()
+        		if(repeat == "N"):
+        			sim = "nothing"
+        			chooseGame = "nothing"
+        	while(sim == "D"):
+        		amount = int(input("how many dice"))
+        		sides = int(input("how many sides on each die"))
+        		for i in range (amount):
+        			print("dice",i + 1,"is",random.randrange(1,sides+1))
+        		repeat2 = input("again? (y/n)")
+        		repeat2 = repeat2.upper()
+        		if(repeat2 == "N"):
+        			sim = "nothing"
+        			chooseGame = "nothing"
+        
 #Mastermind
         if (chooseGame == "MA"):
             game = True
